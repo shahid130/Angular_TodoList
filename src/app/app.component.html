@@ -1,0 +1,16 @@
+<div class = "container">
+  <div class = "todoList">
+    <h1>To Do List</h1>
+    <div>
+      <input [(ngModel)]="todo.Title" type="text" placeholder="">
+      <button [disabled]="!todo.Title" [disabled]="todo.Title.length>20" (click)= "addItem()" type="submit">{{todo.Id?'Update':'Add'}}</button>
+    </div>
+    <ul>
+      <li *ngFor="let item of todoList" >
+        <label for = "task3">{{item.Title}} </label>
+        <i (click) = "editItem(item)" class= " fa fa-pencil"></i>
+        <i (click) = "deleteItem(item.Id)" class= " fa fa-times"></i>
+      </li>
+    </ul>
+  </div>
+</div>
